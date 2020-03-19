@@ -167,6 +167,25 @@ ggplot(tb, aes(IncClass, PctBach, fill = factor(rural))) +
   xlab("Income Class") +
   ylab("% Bachelors")
 
+# Spatial data in and out 
+# rgdal package includes two functions for readins and writing all kinds of spatial data
+#readOGR() and writeOGR()
+
+install.packages("rgdal", depend=T)
+library(rgdal)
+
+# to write a shapefile writeOGR()
+#writeOGR(obj = georgia, dsn=".", layer= "georgia", driver= "ESRI Shapefile", overwrite_layer = T)
+
+# to read it back readOGR()
+
+new.georgia<- readOGR("georgia.shp")
+
+# alternative is the sf package - with st_read and st_write 
+
+
+
+
 
 
 
